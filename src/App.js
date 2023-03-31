@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Form from "./Page/Form";
+import Table from "./Page/Table";
 
 function App() {
+  const [up, setUp] = useState("");
+  const [postUp, setPostUp] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="h-screen bg-slate-900">
+      <div className="container mx-auto py-10">
+        <Form setPostUp={setPostUp} />
+        <Table setPostUp={setPostUp} postUp={postUp} setUp={setUp} up={up} />
+      </div>
+    </section>
   );
 }
 

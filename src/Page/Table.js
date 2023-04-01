@@ -102,34 +102,33 @@ const Table = ({ setUp, up, postUp, setPostUp }) => {
   };
   return (
     <>
-      <div className="mt-16">
-        <h1 className="mb-10 text-white text-3xl uppercase">
+      <div className="mt-16 text-center lg:text-start">
+        <h1 className="lg:mb-10 mb-5 text-white lg:text-3xl text-xl uppercase">
           List Of Promo Code
         </h1>
 
-        <div className="mb-5 text-end">
+        <div className="mb-5  lg:text-end">
           <form ref={form} onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-3">
               <input
-                className="w-80 appearance-none rounded-sm border-0 p-2 px-4 focus:ring-2 focus:ring-orange-500"
+                className="lg:w-60 w-50 appearance-none lg:rounded-sm rounded-full border-0 p-2 px-4 focus:ring-2 focus:ring-orange-500"
                 type="text"
                 {...register("search")}
                 id="search"
-              />
-
+              />{" "}
               <button
                 type="submit"
-                className="rounded-sm ml-3  bg-indigo-500 p-2 px-4 text-white hover:bg-orange-500 w-36"
+                className="lg:rounded-sm rounded-full ml-3  bg-indigo-500 p-2 px-4 text-white hover:bg-orange-500 lg:w-36"
               >
-                Add To List
+                Search
               </button>
             </div>
           </form>
         </div>
         <div className="overflow-hidden rounded-sm border border-gray-200 shadow-md">
           <table className="w-full border-collapse bg-white text-left text-sm text-gray-500">
-            <thead className="bg-gray-50">
-              <tr>
+            <thead className="bg-slate-300">
+              <tr className="hidden lg:block md:block">
                 <th scope="col" className="px-6 py-4 font-medium text-gray-900">
                   Promo Code Name
                 </th>
@@ -141,6 +140,25 @@ const Table = ({ setUp, up, postUp, setPostUp }) => {
                 </th>
                 <th scope="col" className="px-6 py-4 font-medium text-gray-900">
                   Actions
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-4 font-medium text-gray-900"
+                ></th>
+              </tr>
+
+              <tr className="lg:hidden md:hidden">
+                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
+                  Promo Code
+                </th>
+                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
+                  Discount
+                </th>
+                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
+                  Edit
+                </th>
+                <th scope="col" className="px-6 py-4 font-medium text-gray-900">
+                  Action
                 </th>
                 <th
                   scope="col"
